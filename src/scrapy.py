@@ -14,4 +14,5 @@ class ScrapyData():
         response = requests.get(url, self.header)
         while response.status_code != 200:
             response = requests.get(url, self.header)
+        print('Conexão estabelecida.')
         return response.content

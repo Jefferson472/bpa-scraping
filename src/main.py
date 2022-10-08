@@ -15,6 +15,7 @@ iphones = soup.find_all("div", attrs={"class": "s-card-border"})
 with open(
     'amazon-iphone-list.csv', 'w', newline='', encoding='utf-8-sig',
 ) as file:
+    print('Iniciando coleta de dados!')
     writer = csv.writer(file, delimiter=';')
     writer.writerow(['cod', 'description', 'price'])
 
@@ -26,4 +27,5 @@ with open(
         else:
             writer.writerow([i, name, 'Sem Estoque'])
 
-    file.close()
+file.close()
+print('Coleta de dados finalizada.')
